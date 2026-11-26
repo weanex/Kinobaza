@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MovieDialog</class>
+ <widget class="QDialog" name="MovieDialog">
+  <property name="geometry"><rect><x>0</x><y>0</y><width>480</width><height>520</height></rect></property>
+  <property name="windowTitle"><string>Фильм</string></property>
+  <layout class="QVBoxLayout" name="vl_main">
+   <item>
+    <widget class="QGroupBox" name="gb_main">
+     <property name="title"><string>Информация о фильме</string></property>
+     <layout class="QFormLayout" name="fl_main">
+      <item row="0" column="0"><widget class="QLabel" name="lbl_title"><property name="text"><string>Название:</string></property></widget></item>
+      <item row="0" column="1"><widget class="QLineEdit" name="edit_title"/></item>
+      <item row="1" column="0"><widget class="QLabel" name="lbl_year"><property name="text"><string>Год:</string></property></widget></item>
+      <item row="1" column="1"><widget class="QSpinBox" name="spin_year">
+        <property name="minimum"><number>1900</number></property>
+        <property name="maximum"><number>2100</number></property>
+        <property name="value"><number>2024</number></property>
+      </widget></item>
+      <item row="2" column="0"><widget class="QLabel" name="lbl_genre"><property name="text"><string>Жанр:</string></property></widget></item>
+      <item row="2" column="1"><widget class="QComboBox" name="combo_genre"/></item>
+      <item row="3" column="0"><widget class="QLabel" name="lbl_rating"><property name="text"><string>Рейтинг:</string></property></widget></item>
+      <item row="3" column="1"><widget class="QDoubleSpinBox" name="spin_rating">
+        <property name="maximum"><double>10.0</double></property>
+        <property name="singleStep"><double>0.1</double></property>
+      </widget></item>
+      <item row="4" column="0"><widget class="QLabel" name="lbl_poster"><property name="text"><string>Постер:</string></property></widget></item>
+      <item row="4" column="1">
+       <layout class="QHBoxLayout" name="hl_poster">
+        <item><widget class="QLineEdit" name="edit_poster"/></item>
+        <item><widget class="QPushButton" name="btn_poster"><property name="text"><string>...</string></property></widget></item>
+       </layout>
+      </item>
+      <item row="5" column="0"><widget class="QLabel" name="lbl_audio"><property name="text"><string>Трейлер:</string></property></widget></item>
+      <item row="5" column="1">
+       <layout class="QHBoxLayout" name="hl_audio">
+        <item><widget class="QLineEdit" name="edit_audio"/></item>
+        <item><widget class="QPushButton" name="btn_audio"><property name="text"><string>...</string></property></widget></item>
+       </layout>
+      </item>
+      <item row="6" column="0" colspan="2"><widget class="QLabel" name="lbl_desc"><property name="text"><string>Описание:</string></property></widget></item>
+      <item row="7" column="0" colspan="2"><widget class="QTextEdit" name="edit_desc"><property name="maximumHeight"><number>120</number></property></widget></item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QDialogButtonBox" name="buttonBox">
+     <property name="standardButtons"><set>QDialogButtonBox::Ok|QDialogButtonBox::Cancel</set></property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>accepted()</signal>
+   <receiver>MovieDialog</receiver>
+   <slot>accept()</slot>
+   <hints>
+    <hint type="sourcelabel"><x>240</x><y>490</y></hint>
+    <hint type="destinationlabel"><x>240</x><y>259</y></hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>rejected()</signal>
+   <receiver>MovieDialog</receiver>
+   <slot>reject()</slot>
+   <hints>
+    <hint type="sourcelabel"><x>240</x><y>490</y></hint>
+    <hint type="destinationlabel"><x>240</x><y>259</y></hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>
